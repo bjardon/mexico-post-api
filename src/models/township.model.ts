@@ -1,5 +1,6 @@
 import {belongsTo, Entity, model, property} from '@loopback/repository';
 import {Municipality, MunicipalityWithRelations} from './municipality.model';
+import {PostCode} from './post-code.model';
 
 @model()
 export class Township extends Entity {
@@ -30,6 +31,9 @@ export class Township extends Entity {
 
   @belongsTo(() => Municipality)
   municipalityId: string;
+
+  @belongsTo(() => PostCode)
+  postCodeId: string;
 
   constructor(data?: Partial<Township>) {
     super(data);

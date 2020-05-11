@@ -1,8 +1,9 @@
 import {DefaultCrudRepository, repository, BelongsToAccessor} from '@loopback/repository';
-import {Township, TownshipRelations, Municipality} from '../models';
+import {Township, TownshipRelations, Municipality, PostCode} from '../models';
 import {DbDataSource} from '../datasources';
 import {inject, Getter} from '@loopback/core';
 import {MunicipalityRepository} from './municipality.repository';
+import {PostCodeRepository} from './post-code.repository';
 
 export class TownshipRepository extends DefaultCrudRepository<
   Township,
@@ -12,10 +13,14 @@ export class TownshipRepository extends DefaultCrudRepository<
 
   public readonly municipality: BelongsToAccessor<Municipality, typeof Township.prototype.id>;
 
+  public readonly postCode: BelongsToAccessor<PostCode, typeof Township.prototype.id>;
+
   constructor(
-    @inject('datasources.db') dataSource: DbDataSource, @repository.getter('MunicipalityRepository') protected municipalityRepositoryGetter: Getter<MunicipalityRepository>,
+    @inject('datasources.db') dataSource: DbDataSource, @repository.getter('MunicipalityRepository') protected municipalityRepositoryGetter: Getter<MunicipalityRepository>, @repository.getter('PostCodeRepository') protected postCodeRepositoryGetter: Getter<PostCodeRepository>,
   ) {
     super(Township, dataSource);
+    this.postCode = this.createBelongsToAccessorFor('postCode', postCodeRepositoryGetter,);
+    this.registerInclusionResolver('postCode', this.postCode.inclusionResolver);
     this.municipality = this.createBelongsToAccessorFor('municipality', municipalityRepositoryGetter,);
     this.registerInclusionResolver('municipality', this.municipality.inclusionResolver);
   }

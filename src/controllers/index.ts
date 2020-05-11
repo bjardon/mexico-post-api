@@ -11,3 +11,5 @@ export * from './municipality-township.controller';
 export * from './township-municipality.controller';
 export * from './municipality-post-office.controller';
 export * from './post-code-municipality.controller';
+export * from './township-post-code.controller';
+export * from './post-code-township.controller';
