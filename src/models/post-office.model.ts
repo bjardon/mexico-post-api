@@ -1,4 +1,5 @@
 import {Entity, hasMany, model, property} from '@loopback/repository';
+import {MunicipalityWithRelations} from './municipality.model';
 import {PostCode, PostCodeWithRelations} from './post-code.model';
 
 @model()
@@ -30,6 +31,7 @@ export class PostOffice extends Entity {
 }
 
 export interface PostOfficeRelations {
+  municipality?: MunicipalityWithRelations;
   postCodes?: PostCodeWithRelations[];
 }
 
