@@ -15,6 +15,10 @@ export class PostOffice extends Entity {
   })
   code: string;
 
+  @property({
+    type: 'string',
+  })
+  municipalityId?: string;
 
   constructor(data?: Partial<PostOffice>) {
     super(data);
