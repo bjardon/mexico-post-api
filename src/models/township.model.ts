@@ -1,4 +1,5 @@
-import {Entity, model, property} from '@loopback/repository';
+import {belongsTo, Entity, model, property} from '@loopback/repository';
+import {Municipality, MunicipalityWithRelations} from './municipality.model';
 
 @model()
 export class Township extends Entity {
@@ -27,6 +28,8 @@ export class Township extends Entity {
   })
   type: string;
 
+  @belongsTo(() => Municipality)
+  municipalityId: string;
 
   constructor(data?: Partial<Township>) {
     super(data);
@@ -34,7 +37,7 @@ export class Township extends Entity {
 }
 
 export interface TownshipRelations {
-  // describe navigational properties here
+  municipality?: MunicipalityWithRelations;
 }
 
 export type TownshipWithRelations = Township & TownshipRelations;
