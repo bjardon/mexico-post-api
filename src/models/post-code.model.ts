@@ -1,6 +1,6 @@
-import {Entity, model, property, belongsTo, hasMany} from '@loopback/repository';
-import {Municipality} from './municipality.model';
-import {Township} from './township.model';
+import {belongsTo, Entity, hasMany, model, property} from '@loopback/repository';
+import {Municipality, MunicipalityWithRelations} from './municipality.model';
+import {Township, TownshipWithRelations} from './township.model';
 
 @model()
 export class PostCode extends Entity {
@@ -29,7 +29,8 @@ export class PostCode extends Entity {
 }
 
 export interface PostCodeRelations {
-  // describe navigational properties here
+  municipality?: MunicipalityWithRelations;
+  townships?: TownshipWithRelations[];
 }
 
 export type PostCodeWithRelations = PostCode & PostCodeRelations;

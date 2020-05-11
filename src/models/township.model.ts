@@ -1,7 +1,7 @@
 import {belongsTo, Entity, model, property} from '@loopback/repository';
 import {City, CityWithRelations} from './city.model';
 import {Municipality, MunicipalityWithRelations} from './municipality.model';
-import {PostCode} from './post-code.model';
+import {PostCode, PostCodeWithRelations} from './post-code.model';
 
 @model()
 export class Township extends Entity {
@@ -46,6 +46,7 @@ export class Township extends Entity {
 
 export interface TownshipRelations {
   municipality?: MunicipalityWithRelations;
+  postCode?: PostCodeWithRelations;
   city?: CityWithRelations;
 }
 
