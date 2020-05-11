@@ -1,4 +1,5 @@
-import {Entity, model, property} from '@loopback/repository';
+import {Entity, hasMany, model, property} from '@loopback/repository';
+import {Municipality, MunicipalityWithRelations} from './municipality.model';
 
 @model()
 export class State extends Entity {
@@ -21,6 +22,8 @@ export class State extends Entity {
   })
   abbreviation: string;
 
+  @hasMany(() => Municipality)
+  municipalities: Municipality[];
 
   constructor(data?: Partial<State>) {
     super(data);
@@ -28,7 +31,7 @@ export class State extends Entity {
 }
 
 export interface StateRelations {
-  // describe navigational properties here
+  municipalities?: MunicipalityWithRelations[];
 }
 
 export type StateWithRelations = State & StateRelations;

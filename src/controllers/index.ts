@@ -5,3 +5,5 @@ export * from './municipalities.controller';
 export * from './townships.controller';
 export * from './post-codes.controller';
 export * from './post-office.controller';
+export * from './state-municipality.controller';
+export * from './municipality-state.controller';
