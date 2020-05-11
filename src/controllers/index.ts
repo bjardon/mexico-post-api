@@ -15,3 +15,5 @@ export * from './township-post-code.controller';
 export * from './post-code-township.controller';
 export * from './city-township.controller';
 export * from './township-city.controller';
+export * from './post-office-post-code.controller';
+export * from './post-code-post-office.controller';
