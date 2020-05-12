@@ -2,72 +2,95 @@
 <html lang="en">
 
 <head>
-  <title>Mexican postal codes, townships, municipalities and states</title>
-
+  <title>Mexico Post API</title>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="shortcut icon" type="image/x-icon" href="https://loopback.io/favicon.ico">
-
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
   <style>
-    h3 {
-      margin-left: 25px;
-      text-align: center;
-    }
-
-    a, a:visited {
-      color: #3f5dff;
-    }
-
-    h3 a {
-      margin-left: 10px;
-    }
-
-    a:hover, a:focus, a:active {
-      color: #001956;
-    }
-
-    .power {
-      position: absolute;
-      bottom: 25px;
-      left: 50%;
-      transform: translateX(-50%);
-    }
-
-    .info {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%)
-    }
-
-    .info h1 {
-      text-align: center;
-      margin-bottom: 0;
-    }
-
-    .info p {
-      text-align: center;
-      margin-bottom: 3em;
-      margin-top: 1em;
+    /* Move down content because we have a fixed navbar that is 3.5rem tall */
+    body {
+      padding-top: 3.5rem;
     }
   </style>
 </head>
 
 <body>
-  <div class="info">
-    <h1>mexico-post-api</h1>
-    <p>Version 1.0.0</p>
-
-    <h3>OpenAPI spec: <a href="/openapi.json">/openapi.json</a></h3>
-    <h3>API Explorer: <a href="/explorer">/explorer</a></h3>
-  </div>
-
-  <footer class="power">
-    <a href="https://loopback.io" target="_blank">
-      <img src="https://loopback.io/images/branding/powered-by-loopback/blue/powered-by-loopback-sm.png" />
-    </a>
+  <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+    <div class="container">
+      <a class="navbar-brand" href="https://elotestudio.com">EloteStudio</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar" aria-controls="navbar"
+        aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbar">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="/">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/docs/index.html">Documentation</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/explorer">API Explorer</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <main role="main">
+    <div class="jumbotron">
+      <div class="container">
+        <h1>mexico-post-api</h1>
+        <p class="lead mb-0">The definitive API for address-related stuff in Mexico</p>
+        <p>Current version: <strong>v0.0.1</strong></p>
+        <p><a class="btn btn-primary btn-lg" href="docs/index.html" role="button">Take me to the Docs</a></p>
+      </div>
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="alert alert-warning" role="alert" id="wip">
+            <h4 class="alert-heading">This is a Work-In-Progress!</h4>
+            <p>Please bear in mind this project is still a work-in-progress. Although this it is already available
+              for public access on this site, some features may not be finished, tested or completely documented. Once
+              the project is considered 'finished', this legend will not be displayed anymore.</p>
+            <hr>
+            <p class="mb-0">Don't forget to check out this site regularly; since development is ongoing, the project
+              could be finished any day from now.</p>
+          </div>
+          <h2>Useful features</h2>
+          <p>With this API you can...</p>
+        </div>
+        <div class="col-md-4">
+          <h3>Query post code information</h3>
+          <p>Retrieve information regarding any post code. Fetch town, state and city; along other useful fields.</p>
+        </div>
+        <div class="col-md-4">
+          <h3>Validate address data</h3>
+          <p>Use the API to validate a given town, city, state and post code combination. Find invalid fields.</p>
+        </div>
+        <div class="col-md-4">
+          <h3>Choose how you want to use it</h3>
+          <p>Connect via an HTTP client or use the OpenAPI standard. Or even host the API on your own server.</p>
+        </div>
+        <hr>
+      </div>
+  </main>
+  <footer class="container">
+    <p>&copy; Bruno Jardón / Elote Studio 2020</p>
   </footer>
+  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+    integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+    integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+    crossorigin="anonymous"></script>
 </body>
 
 </html>
