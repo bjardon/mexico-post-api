@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Mexico Post API: Docs</title>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="shortcut icon" type="image/x-icon" href="https://loopback.io/favicon.ico">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <style>
+    /* Move down content because we have a fixed navbar that is 3.5rem tall */
+    body {
+      padding-top: 3.5rem;
+    }
+  </style>
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+    <div class="container">
+      <a class="navbar-brand" href="https://elotestudio.com">EloteStudio</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar" aria-controls="navbar"
+        aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbar">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="/">Home</a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="/docs/index.html">Documentation</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/explorer">API Explorer</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <main id="top" role="main">
+    <div class="jumbotron">
+      <div class="container">
+        <h1>Documentation | <small>Entities: PostOffice</small></h1>
+        <p class="lead">mexico-post-api</p>
+      </div>
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-3">
+          <h2>Contents</h2>
+          <ul class="list-unstyled">
+            <li class="ml-0"><a href="/docs/#top" clas>Introduction</a></li>
+            <ul class="list-unstyled">
+              <li class="ml-2"><a href="/docs/#whats-this">What's this</a></li>
+              <li class="ml-2"><a href="/docs/#whos-this-for">Who's this for?</a></li>
+              <li class="ml-2"><a href="/docs/#pricing">Pricing</a></li>
+              <li class="ml-2"><a href="/docs/#contribute">I want to contribute</a></li>
+              <li class="ml-2"><a href="/docs/#license">License</a></li>
+              <li class="ml-2"><a href="/docs/#credits">Credits</a></li>
+            </ul>
+            <li class="ml-0"><a href="/docs/entities/introduction.html">Entities</a></li>
+            <ul class="list-unstyled">
+              <li class="ml-2"><a href="/docs/entities/state.html">State</a></li>
+              <li class="ml-2"><a href="/docs/entities/city.html">City</a></li>
+              <li class="ml-2"><a href="/docs/entities/municipality.html">Municipality</a></li>
+              <li class="ml-2"><a href="/docs/entities/township.html">Township</a></li>
+              <li class="ml-2"><a href="/docs/entities/post-code.html">PostCode</a></li>
+              <li class="ml-2"><a href="/docs/entities/post-office.html">PostOffice</a></li>
+              <li class="ml-2"><a href="/docs/entities/class-diagram.html">Class diagram</a></li>
+            </ul>
+            <li class="ml-0"><a href="/docs/connecting.html">Connecting to the API</a></li>
+            <ul class="list-unstyled">
+              <li class="ml-2"><a href="/docs/connecting.html#remote">Connecting to this server</a></li>
+              <ul class="list-unstyled">
+                <li class="ml-4"><a href="/docs/connecting.html#remote-http-client">Using an HTTP client</a></li>
+                <li class="ml-4"><a href="/docs/connecting.html#remote-loopback">Connecting another Loopback app</a>
+                </li>
+                <li class="ml-4"><a href="/docs/connecting.html#remote-openapi">Connecting an OpenAPI-compatible
+                    framework</a></li>
+              </ul>
+              <li class="ml-2"><a href="/docs/connecting.html#self-hosted">Deploying your own server</a></li>
+              <ul class="list-unstyled">
+                <li class="ml-4"><a href="/docs/connecting.html#self-hosted-code">Getting the code</a></li>
+                <li class="ml-4"><a href="/docs/connecting.html#self-hosted-config">Configuring the server</a></li>
+                <li class="ml-4"><a href="/docs/connecting.html#self-hosted-deploy">Deploying the API</a></li>
+              </ul>
+              <li class="ml-2"><a href="/docs/connecting.html#auth">Authentication</a></li>
+            </ul>
+            <li class="ml-0"><a href="/docs/endpoints/introduction.html">Endpoints</a></li>
+            <ul class="list-unstyled">
+              <li class="ml-2"><a href="/docs/endpoints/state.html">State</a></li>
+              <ul class="list-unstyled">
+                <li class="ml-4"><a href="/docs/endpoints/state.html#all">List all states</a></li>
+                <li class="ml-4"><a href="/docs/endpoints/state.html#find">Find a state</a></li>
+                <li class="ml-4"><a href="/docs/endpoints/state.html#municipalities">List state Municipalities</a></li>
+              </ul>
+              <li class="ml-2"><a href="/docs/endpoints/municipality.html">Municipality</a></li>
+              <ul class="list-unstyled">
+                <li class="ml-4"><a href="/docs/endpoints/municipality.html#all">List all Municipalities</a></li>
+                <li class="ml-4"><a href="/docs/endpoints/municipality.html#find">Find a Municipality</a></li>
+                <li class="ml-4"><a href="/docs/endpoints/municipality.html#townships">List all Townships</a></li>
+                <li class="ml-4"><a href="/docs/endpoints/municipality.html#post-offices">List all Post Offices</a></li>
+                <li class="ml-4"><a href="/docs/endpoints/municipality.html#state">Find parent State</a></li>
+              </ul>
+              <li class="ml-2"><a href="/docs/endpoints/township.html">Township</a></li>
+              <ul class="list-unstyled">
+                <li class="ml-4"><a href="/docs/endpoints/township.html#all">List all Townships</a></li>
+                <li class="ml-4"><a href="/docs/endpoints/township.html#find">Find a Township</a></li>
+                <li class="ml-4"><a href="/docs/endpoints/township.html#post-code">Find parent Post Code</a></li>
+                <li class="ml-4"><a href="/docs/endpoints/township.html#municipality">Find parent Municipality</a></li>
+                <li class="ml-4"><a href="/docs/endpoints/township.html#city">Find parent City</a></li>
+              </ul>
+              <li class="ml-2"><a href="/docs/endpoints/city.html">City</a></li>
+              <ul class="list-unstyled">
+                <li class="ml-4"><a href="/docs/endpoints/city.html#all">List all Cities</a></li>
+                <li class="ml-4"><a href="/docs/endpoints/city.html#find">Find a City</a></li>
+                <li class="ml-4"><a href="/docs/endpoints/city.html#townships">List all Townships</a></li>
+              </ul>
+              <li class="ml-2"><a href="/docs/endpoints/post-code.html">PostCode</a></li>
+              <ul class="list-unstyled">
+                <li class="ml-4"><a href="/docs/endpoints/post-code.html#all">List all Post Codes</a></li>
+                <li class="ml-4"><a href="/docs/endpoints/post-code.html#find">Find a Post Code</a></li>
+                <li class="ml-4"><a href="/docs/endpoints/post-code.html#township">List all Townships</a></li>
+                <li class="ml-4"><a href="/docs/endpoints/post-code.html#post-office">Find parent Post Office</a></li>
+              </ul>
+              <li class="ml-2"><a href="/docs/endpoints/post-office.html">Post Office</a></li>
+              <ul class="list-unstyled">
+                <li class="ml-4"><a href="/docs/endpoints/post-office.html#all">List all Post Offices</a></li>
+                <li class="ml-4"><a href="/docs/endpoints/post-office.html#find">Find a Post Office</a></li>
+                <li class="ml-4"><a href="/docs/endpoints/post-office.html#post-codes">List all Post Codes</a></li>
+                <li class="ml-4"><a href="/docs/endpoints/post-office.html#township">Find parent Township</a></li>
+              </ul>
+              <li class="ml-2"><a href="/docs/endpoints/address.html">Address</a></li>
+              <ul class="list-unstyled">
+                <li class="ml-4"><a href="/docs/endpoints/address.html#validate">Validate address</a></li>
+              </ul>
+            </ul>
+          </ul>
+        </div>
+        <div class="col">
+          <section id="description">
+            <h2>Entity description</h2>
+            <p><code>PostOffice</code> represents a physical postal office.</p>
+          </section>
+          <section id="properties">
+            <h2>Properties</h2>
+            <p><code>PostOffice</code> has the following properties</p>
+            <table class="table table-bordered">
+              <thead>
+                <tr>
+                  <th scope="col">Attribute</th>
+                  <th scope="col">Type</th>
+                  <th scope="col">Description</th>
+                  <th scope="col">Required</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td scope="row"><code>id</code></td>
+                  <td><code>string</code></td>
+                  <td>Unique identifier. Primary key.</td>
+                  <td>-</td>
+                </tr>
+                <tr>
+                  <td scope="row"><code>code</code></td>
+                  <td><code>string</code></td>
+                  <td>The Post Office's code identifier assigned by SEPOMEX.</td>
+                  <td>Yes</td>
+                </tr>
+                <tr>
+                  <td scope="row"><code>municipalityId</code></td>
+                  <td><code>string</code></td>
+                  <td>Foreign key. The related Municipality's primary key.</td>
+                  <td>-</td>
+                </tr>
+                <tr>
+                  <td scope="row"><code>municipality</code></td>
+                  <td><code><a href="/docs/entities/municipality.html">Municipality</a></code></td>
+                  <td>Navigational property. Related Municipality.</td>
+                  <td>-</td>
+                </tr>
+                <tr>
+                  <td scope="row"><code>postCodes</code></td>
+                  <td><code><a href="/docs/entities/post-code.html">PostCode</a>[]</code></td>
+                  <td>Navigational property. Related Post Codes.</td>
+                  <td>-</td>
+                </tr>
+              </tbody>
+            </table>
+          </section>
+          <section id="relations">
+            <h2>Related models</h2>
+            <p><code>City</code> has the following related models</p>
+            <table class="table table-bordered">
+              <thead>
+                <tr>
+                  <th scope="col">Entity</th>
+                  <th scope="col">Cardinality</th>
+                  <th scope="col">Description</th>
+                  <th scope="col">Navigational property</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td scope="row"><code><a href="/docs/entities/municipality.html">Municipality</a></code></td>
+                  <td>belongs to</td>
+                  <td>Municipality containing this Post Office.</td>
+                  <td><code>municipality</code></td>
+                </tr>
+                <tr>
+                  <td scope="row"><code><a href="/docs/entities/post-code.html">PostCode</a></code></td>
+                  <td>has many</td>
+                  <td>Post Codes managed by this Post Office.</td>
+                  <td><code>postCodes</code></td>
+                </tr>
+              </tbody>
+            </table>
+          </section>
+          <section id="model">
+            <h2>Example model</h2>
+            <p>The following code is a <code>JSON</code> representation of a <code>PostOffice</code></p>
+            <code>
+              {
+                "code": "string",
+                "municipalityId": "string"
+              }
+            </code>
+          </section>
+        </div>
+      </div>
+      <hr>
+    </div>
+  </main>
+  <footer class="container">
+    <p class="text-right"><a href="#top">Back to top &UpArrow;</a></p>
+    <p>&copy; Bruno Jardón / Elote Studio 2020</p>
+  </footer>
+  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+    integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+    integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+    crossorigin="anonymous"></script>
+</body>
+
+</html>

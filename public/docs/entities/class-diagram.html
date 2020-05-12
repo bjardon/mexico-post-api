@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Mexico Post API: Docs</title>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="shortcut icon" type="image/x-icon" href="https://loopback.io/favicon.ico">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <style>
+    /* Move down content because we have a fixed navbar that is 3.5rem tall */
+    body {
+      padding-top: 3.5rem;
+    }
+  </style>
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+    <div class="container">
+      <a class="navbar-brand" href="https://elotestudio.com">EloteStudio</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar" aria-controls="navbar"
+        aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbar">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="/">Home</a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="/docs/index.html">Documentation</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/explorer">API Explorer</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <main id="top" role="main">
+    <div class="jumbotron">
+      <div class="container">
+        <h1>Documentation | <small>Entities: Class diagram</small></h1>
+        <p class="lead">mexico-post-api</p>
+      </div>
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-3">
+          <h2>Contents</h2>
+          <ul class="list-unstyled">
+            <li class="ml-0"><a href="/docs/#top" clas>Introduction</a></li>
+            <ul class="list-unstyled">
+              <li class="ml-2"><a href="/docs/#whats-this">What's this</a></li>
+              <li class="ml-2"><a href="/docs/#whos-this-for">Who's this for?</a></li>
+              <li class="ml-2"><a href="/docs/#pricing">Pricing</a></li>
+              <li class="ml-2"><a href="/docs/#contribute">I want to contribute</a></li>
+              <li class="ml-2"><a href="/docs/#license">License</a></li>
+              <li class="ml-2"><a href="/docs/#credits">Credits</a></li>
+            </ul>
+            <li class="ml-0"><a href="/docs/entities/introduction.html">Entities</a></li>
+            <ul class="list-unstyled">
+              <li class="ml-2"><a href="/docs/entities/state.html">State</a></li>
+              <li class="ml-2"><a href="/docs/entities/city.html">City</a></li>
+              <li class="ml-2"><a href="/docs/entities/municipality.html">Municipality</a></li>
+              <li class="ml-2"><a href="/docs/entities/township.html">Township</a></li>
+              <li class="ml-2"><a href="/docs/entities/post-code.html">PostCode</a></li>
+              <li class="ml-2"><a href="/docs/entities/post-office.html">PostOffice</a></li>
+              <li class="ml-2"><a href="/docs/entities/class-diagram.html">Class diagram</a></li>
+            </ul>
+            <li class="ml-0"><a href="/docs/connecting.html">Connecting to the API</a></li>
+            <ul class="list-unstyled">
+              <li class="ml-2"><a href="/docs/connecting.html#remote">Connecting to this server</a></li>
+              <ul class="list-unstyled">
+                <li class="ml-4"><a href="/docs/connecting.html#remote-http-client">Using an HTTP client</a></li>
+                <li class="ml-4"><a href="/docs/connecting.html#remote-loopback">Connecting another Loopback app</a>
+                </li>
+                <li class="ml-4"><a href="/docs/connecting.html#remote-openapi">Connecting an OpenAPI-compatible
+                    framework</a></li>
+              </ul>
+              <li class="ml-2"><a href="/docs/connecting.html#self-hosted">Deploying your own server</a></li>
+              <ul class="list-unstyled">
+                <li class="ml-4"><a href="/docs/connecting.html#self-hosted-code">Getting the code</a></li>
+                <li class="ml-4"><a href="/docs/connecting.html#self-hosted-config">Configuring the server</a></li>
+                <li class="ml-4"><a href="/docs/connecting.html#self-hosted-deploy">Deploying the API</a></li>
+              </ul>
+              <li class="ml-2"><a href="/docs/connecting.html#auth">Authentication</a></li>
+            </ul>
+            <li class="ml-0"><a href="/docs/endpoints/introduction.html">Endpoints</a></li>
+            <ul class="list-unstyled">
+              <li class="ml-2"><a href="/docs/endpoints/state.html">State</a></li>
+              <ul class="list-unstyled">
+                <li class="ml-4"><a href="/docs/endpoints/state.html#all">List all states</a></li>
+                <li class="ml-4"><a href="/docs/endpoints/state.html#find">Find a state</a></li>
+                <li class="ml-4"><a href="/docs/endpoints/state.html#municipalities">List state Municipalities</a></li>
+              </ul>
+              <li class="ml-2"><a href="/docs/endpoints/municipality.html">Municipality</a></li>
+              <ul class="list-unstyled">
+                <li class="ml-4"><a href="/docs/endpoints/municipality.html#all">List all Municipalities</a></li>
+                <li class="ml-4"><a href="/docs/endpoints/municipality.html#find">Find a Municipality</a></li>
+                <li class="ml-4"><a href="/docs/endpoints/municipality.html#townships">List all Townships</a></li>
+                <li class="ml-4"><a href="/docs/endpoints/municipality.html#post-offices">List all Post Offices</a></li>
+                <li class="ml-4"><a href="/docs/endpoints/municipality.html#state">Find parent State</a></li>
+              </ul>
+              <li class="ml-2"><a href="/docs/endpoints/township.html">Township</a></li>
+              <ul class="list-unstyled">
+                <li class="ml-4"><a href="/docs/endpoints/township.html#all">List all Townships</a></li>
+                <li class="ml-4"><a href="/docs/endpoints/township.html#find">Find a Township</a></li>
+                <li class="ml-4"><a href="/docs/endpoints/township.html#post-code">Find parent Post Code</a></li>
+                <li class="ml-4"><a href="/docs/endpoints/township.html#municipality">Find parent Municipality</a></li>
+                <li class="ml-4"><a href="/docs/endpoints/township.html#city">Find parent City</a></li>
+              </ul>
+              <li class="ml-2"><a href="/docs/endpoints/city.html">City</a></li>
+              <ul class="list-unstyled">
+                <li class="ml-4"><a href="/docs/endpoints/city.html#all">List all Cities</a></li>
+                <li class="ml-4"><a href="/docs/endpoints/city.html#find">Find a City</a></li>
+                <li class="ml-4"><a href="/docs/endpoints/city.html#townships">List all Townships</a></li>
+              </ul>
+              <li class="ml-2"><a href="/docs/endpoints/post-code.html">PostCode</a></li>
+              <ul class="list-unstyled">
+                <li class="ml-4"><a href="/docs/endpoints/post-code.html#all">List all Post Codes</a></li>
+                <li class="ml-4"><a href="/docs/endpoints/post-code.html#find">Find a Post Code</a></li>
+                <li class="ml-4"><a href="/docs/endpoints/post-code.html#township">List all Townships</a></li>
+                <li class="ml-4"><a href="/docs/endpoints/post-code.html#post-office">Find parent Post Office</a></li>
+              </ul>
+              <li class="ml-2"><a href="/docs/endpoints/post-office.html">Post Office</a></li>
+              <ul class="list-unstyled">
+                <li class="ml-4"><a href="/docs/endpoints/post-office.html#all">List all Post Offices</a></li>
+                <li class="ml-4"><a href="/docs/endpoints/post-office.html#find">Find a Post Office</a></li>
+                <li class="ml-4"><a href="/docs/endpoints/post-office.html#post-codes">List all Post Codes</a></li>
+                <li class="ml-4"><a href="/docs/endpoints/post-office.html#township">Find parent Township</a></li>
+              </ul>
+              <li class="ml-2"><a href="/docs/endpoints/address.html">Address</a></li>
+              <ul class="list-unstyled">
+                <li class="ml-4"><a href="/docs/endpoints/address.html#validate">Validate address</a></li>
+              </ul>
+            </ul>
+          </ul>
+        </div>
+        <div class="col">
+          <section id="class-diagram">
+            <h2>Class Diagram</h2>
+            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+              width="899.32421875" height="428">
+              <defs />
+              <g>
+                <g transform="translate(-30,-70) scale(1,1)">
+                  <rect fill="#C0C0C0" stroke="none" x="71" y="343" width="208.087890625" height="87" opacity="0.2" />
+                </g>
+                <g transform="translate(-30,-70) scale(1,1)">
+                  <rect fill="#ffffff" stroke="none" x="64" y="336" width="208.087890625" height="87" />
+                </g>
+                <g transform="translate(-30,-70) scale(1,1)">
+                  <path fill="none" stroke="#000000"
+                    d="M 64 336 L 272.087890625 336 L 272.087890625 423 L 64 423 L 64 336 Z Z" stroke-miterlimit="10" />
+                </g>
+                <g transform="translate(-30,-70) scale(1,1)">
+                  <path fill="none" stroke="#000000" d="M 64 361 L 272.087890625 361" stroke-miterlimit="10" />
+                </g>
+                <g transform="translate(-30,-70) scale(1,1)">
+                  <path fill="none" stroke="#000000" d="M 64 414 L 272.087890625 414" stroke-miterlimit="10" />
+                </g>
+                <g transform="translate(-30,-70) scale(1,1)">
+                  <g>
+                    <path fill="none" stroke="none" /><text fill="#000000" stroke="none" font-family="Arial"
+                      font-size="13px" font-style="normal" font-weight="bold" text-decoration="none"
+                      x="156.849853515625" y="355.5">City</text></g>
+                </g>
+                <g transform="translate(-30,-70) scale(1,1)">
+                  <g>
+                    <path fill="none" stroke="none" /><text fill="#000000" stroke="none" font-family="Arial"
+                      font-size="13px" font-style="normal" font-weight="normal" text-decoration="none" x="69"
+                      y="378.5">+id: string</text></g>
+                </g>
+                <g transform="translate(-30,-70) scale(1,1)">
+                  <g>
+                    <path fill="none" stroke="none" /><text fill="#000000" stroke="none" font-family="Arial"
+                      font-size="13px" font-style="normal" font-weight="normal" text-decoration="none" x="69"
+                      y="393.5">+name: string</text></g>
+                </g>
+                <g transform="translate(-30,-70) scale(1,1)">
+                  <g>
+                    <path fill="none" stroke="none" /><text fill="#000000" stroke="none" font-family="Arial"
+                      font-size="13px" font-style="normal" font-weight="normal" text-decoration="none" x="69"
+                      y="408.5">+townships: Collection&lt;Township&gt;</text></g>
+                </g>
+                <g transform="translate(-30,-70) scale(1,1)">
+                  <rect fill="#C0C0C0" stroke="none" x="383" y="87" width="220.60546875" height="132" opacity="0.2" />
+                </g>
+                <g transform="translate(-30,-70) scale(1,1)">
+                  <rect fill="#ffffff" stroke="none" x="376" y="80" width="220.60546875" height="132" />
+                </g>
+                <g transform="translate(-30,-70) scale(1,1)">
+                  <path fill="none" stroke="#000000"
+                    d="M 376 80 L 596.60546875 80 L 596.60546875 212 L 376 212 L 376 80 Z Z" stroke-miterlimit="10" />
+                </g>
+                <g transform="translate(-30,-70) scale(1,1)">
+                  <path fill="none" stroke="#000000" d="M 376 105 L 596.60546875 105" stroke-miterlimit="10" />
+                </g>
+                <g transform="translate(-30,-70) scale(1,1)">
+                  <path fill="none" stroke="#000000" d="M 376 203 L 596.60546875 203" stroke-miterlimit="10" />
+                </g>
+                <g transform="translate(-30,-70) scale(1,1)">
+                  <g>
+                    <path fill="none" stroke="none" /><text fill="#000000" stroke="none" font-family="Arial"
+                      font-size="13px" font-style="normal" font-weight="bold" text-decoration="none"
+                      x="452.345947265625" y="99.5">Municipality</text></g>
+                </g>
+                <g transform="translate(-30,-70) scale(1,1)">
+                  <g>
+                    <path fill="none" stroke="none" /><text fill="#000000" stroke="none" font-family="Arial"
+                      font-size="13px" font-style="normal" font-weight="normal" text-decoration="none" x="381"
+                      y="122.5">+id: string</text></g>
+                </g>
+                <g transform="translate(-30,-70) scale(1,1)">
+                  <g>
+                    <path fill="none" stroke="none" /><text fill="#000000" stroke="none" font-family="Arial"
+                      font-size="13px" font-style="normal" font-weight="normal" text-decoration="none" x="381"
+                      y="137.5">+name: string</text></g>
+                </g>
+                <g transform="translate(-30,-70) scale(1,1)">
+                  <g>
+                    <path fill="none" stroke="none" /><text fill="#000000" stroke="none" font-family="Arial"
+                      font-size="13px" font-style="normal" font-weight="normal" text-decoration="none" x="381"
+                      y="152.5">+stateId: string</text></g>
+                </g>
+                <g transform="translate(-30,-70) scale(1,1)">
+                  <g>
+                    <path fill="none" stroke="none" /><text fill="#000000" stroke="none" font-family="Arial"
+                      font-size="13px" font-style="normal" font-weight="normal" text-decoration="none" x="381"
+                      y="167.5">+state: State</text></g>
+                </g>
+                <g transform="translate(-30,-70) scale(1,1)">
+                  <g>
+                    <path fill="none" stroke="none" /><text fill="#000000" stroke="none" font-family="Arial"
+                      font-size="13px" font-style="normal" font-weight="normal" text-decoration="none" x="381"
+                      y="182.5">+townships: Collection&lt;Township&gt;</text></g>
+                </g>
+                <g transform="translate(-30,-70) scale(1,1)">
+                  <g>
+                    <path fill="none" stroke="none" /><text fill="#000000" stroke="none" font-family="Arial"
+                      font-size="13px" font-style="normal" font-weight="normal" text-decoration="none" x="381"
+                      y="197.5">+postOffices: Collection&lt;PostOffice&gt;</text></g>
+                </g>
+                <g transform="translate(-30,-70) scale(1,1)">
+                  <rect fill="#C0C0C0" stroke="none" x="671" y="343" width="208.087890625" height="132" opacity="0.2" />
+                </g>
+                <g transform="translate(-30,-70) scale(1,1)">
+                  <rect fill="#ffffff" stroke="none" x="664" y="336" width="208.087890625" height="132" />
+                </g>
+                <g transform="translate(-30,-70) scale(1,1)">
+                  <path fill="none" stroke="#000000"
+                    d="M 664 336 L 872.087890625 336 L 872.087890625 468 L 664 468 L 664 336 Z Z"
+                    stroke-miterlimit="10" />
+                </g>
+                <g transform="translate(-30,-70) scale(1,1)">
+                  <path fill="none" stroke="#000000" d="M 664 361 L 872.087890625 361" stroke-miterlimit="10" />
+                </g>
+                <g transform="translate(-30,-70) scale(1,1)">
+                  <path fill="none" stroke="#000000" d="M 664 459 L 872.087890625 459" stroke-miterlimit="10" />
+                </g>
+                <g transform="translate(-30,-70) scale(1,1)">
+                  <g>
+                    <path fill="none" stroke="none" /><text fill="#000000" stroke="none" font-family="Arial"
+                      font-size="13px" font-style="normal" font-weight="bold" text-decoration="none" x="739.49853515625"
+                      y="355.5">PostCode</text></g>
+                </g>
+                <g transform="translate(-30,-70) scale(1,1)">
+                  <g>
+                    <path fill="none" stroke="none" /><text fill="#000000" stroke="none" font-family="Arial"
+                      font-size="13px" font-style="normal" font-weight="normal" text-decoration="none" x="669"
+                      y="378.5">+id: string</text></g>
+                </g>
+                <g transform="translate(-30,-70) scale(1,1)">
+                  <g>
+                    <path fill="none" stroke="none" /><text fill="#000000" stroke="none" font-family="Arial"
+                      font-size="13px" font-style="normal" font-weight="normal" text-decoration="none" x="669"
+                      y="393.5">+code: string</text></g>
+                </g>
+                <g transform="translate(-30,-70) scale(1,1)">
+                  <g>
+                    <path fill="none" stroke="none" /><text fill="#000000" stroke="none" font-family="Arial"
+                      font-size="13px" font-style="normal" font-weight="normal" text-decoration="none" x="669"
+                      y="408.5">+municipalityId: string</text></g>
+                </g>
+                <g transform="translate(-30,-70) scale(1,1)">
+                  <g>
+                    <path fill="none" stroke="none" /><text fill="#000000" stroke="none" font-family="Arial"
+                      font-size="13px" font-style="normal" font-weight="normal" text-decoration="none" x="669"
+                      y="423.5">+townships: Collection&lt;Township&gt;</text></g>
+                </g>
+                <g transform="translate(-30,-70) scale(1,1)">
+                  <g>
+                    <path fill="none" stroke="none" /><text fill="#000000" stroke="none" font-family="Arial"
+                      font-size="13px" font-style="normal" font-weight="normal" text-decoration="none" x="669"
+                      y="438.5">+postOfficeId: string</text></g>
+                </g>
+                <g transform="translate(-30,-70) scale(1,1)">
+                  <g>
+                    <path fill="none" stroke="none" /><text fill="#000000" stroke="none" font-family="Arial"
+                      font-size="13px" font-style="normal" font-weight="normal" text-decoration="none" x="669"
+                      y="453.5">+postOffice: PostOffice</text></g>
+                </g>
+                <g transform="translate(-30,-70) scale(1,1)">
+                  <rect fill="#C0C0C0" stroke="none" x="711" y="95" width="215.32421875" height="117" opacity="0.2" />
+                </g>
+                <g transform="translate(-30,-70) scale(1,1)">
+                  <rect fill="#ffffff" stroke="none" x="704" y="88" width="215.32421875" height="117" />
+                </g>
+                <g transform="translate(-30,-70) scale(1,1)">
+                  <path fill="none" stroke="#000000"
+                    d="M 704 88 L 919.32421875 88 L 919.32421875 205 L 704 205 L 704 88 Z Z" stroke-miterlimit="10" />
+                </g>
+                <g transform="translate(-30,-70) scale(1,1)">
+                  <path fill="none" stroke="#000000" d="M 704 113 L 919.32421875 113" stroke-miterlimit="10" />
+                </g>
+                <g transform="translate(-30,-70) scale(1,1)">
+                  <path fill="none" stroke="#000000" d="M 704 196 L 919.32421875 196" stroke-miterlimit="10" />
+                </g>
+                <g transform="translate(-30,-70) scale(1,1)">
+                  <g>
+                    <path fill="none" stroke="none" /><text fill="#000000" stroke="none" font-family="Arial"
+                      font-size="13px" font-style="normal" font-weight="bold" text-decoration="none" x="781.79638671875"
+                      y="107.5">PostOffice</text></g>
+                </g>
+                <g transform="translate(-30,-70) scale(1,1)">
+                  <g>
+                    <path fill="none" stroke="none" /><text fill="#000000" stroke="none" font-family="Arial"
+                      font-size="13px" font-style="normal" font-weight="normal" text-decoration="none" x="709"
+                      y="130.5">+id: string</text></g>
+                </g>
+                <g transform="translate(-30,-70) scale(1,1)">
+                  <g>
+                    <path fill="none" stroke="none" /><text fill="#000000" stroke="none" font-family="Arial"
+                      font-size="13px" font-style="normal" font-weight="normal" text-decoration="none" x="709"
+                      y="145.5">+code: string</text></g>
+                </g>
+                <g transform="translate(-30,-70) scale(1,1)">
+                  <g>
+                    <path fill="none" stroke="none" /><text fill="#000000" stroke="none" font-family="Arial"
+                      font-size="13px" font-style="normal" font-weight="normal" text-decoration="none" x="709"
+                      y="160.5">+municipalityId: string</text></g>
+                </g>
+                <g transform="translate(-30,-70) scale(1,1)">
+                  <g>
+                    <path fill="none" stroke="none" /><text fill="#000000" stroke="none" font-family="Arial"
+                      font-size="13px" font-style="normal" font-weight="normal" text-decoration="none" x="709"
+                      y="175.5">+municipality: Municipality</text></g>
+                </g>
+                <g transform="translate(-30,-70) scale(1,1)">
+                  <g>
+                    <path fill="none" stroke="none" /><text fill="#000000" stroke="none" font-family="Arial"
+                      font-size="13px" font-style="normal" font-weight="normal" text-decoration="none" x="709"
+                      y="190.5">+postCodes: Collection&lt;PostCode&gt;</text></g>
+                </g>
+                <g transform="translate(-30,-70) scale(1,1)">
+                  <rect fill="#C0C0C0" stroke="none" x="47" y="95" width="242.02880859375" height="102" opacity="0.2" />
+                </g>
+                <g transform="translate(-30,-70) scale(1,1)">
+                  <rect fill="#ffffff" stroke="none" x="40" y="88" width="242.02880859375" height="102" />
+                </g>
+                <g transform="translate(-30,-70) scale(1,1)">
+                  <path fill="none" stroke="#000000"
+                    d="M 40 88 L 282.02880859375 88 L 282.02880859375 190 L 40 190 L 40 88 Z Z"
+                    stroke-miterlimit="10" />
+                </g>
+                <g transform="translate(-30,-70) scale(1,1)">
+                  <path fill="none" stroke="#000000" d="M 40 113 L 282.02880859375 113" stroke-miterlimit="10" />
+                </g>
+                <g transform="translate(-30,-70) scale(1,1)">
+                  <path fill="none" stroke="#000000" d="M 40 181 L 282.02880859375 181" stroke-miterlimit="10" />
+                </g>
+                <g transform="translate(-30,-70) scale(1,1)">
+                  <g>
+                    <path fill="none" stroke="none" /><text fill="#000000" stroke="none" font-family="Arial"
+                      font-size="13px" font-style="normal" font-weight="bold" text-decoration="none"
+                      x="145.837158203125" y="107.5">State</text></g>
+                </g>
+                <g transform="translate(-30,-70) scale(1,1)">
+                  <g>
+                    <path fill="none" stroke="none" /><text fill="#000000" stroke="none" font-family="Arial"
+                      font-size="13px" font-style="normal" font-weight="normal" text-decoration="none" x="45"
+                      y="130.5">+id: string</text></g>
+                </g>
+                <g transform="translate(-30,-70) scale(1,1)">
+                  <g>
+                    <path fill="none" stroke="none" /><text fill="#000000" stroke="none" font-family="Arial"
+                      font-size="13px" font-style="normal" font-weight="normal" text-decoration="none" x="45"
+                      y="145.5">+name: string</text></g>
+                </g>
+                <g transform="translate(-30,-70) scale(1,1)">
+                  <g>
+                    <path fill="none" stroke="none" /><text fill="#000000" stroke="none" font-family="Arial"
+                      font-size="13px" font-style="normal" font-weight="normal" text-decoration="none" x="45"
+                      y="160.5">+abbreviation: string</text></g>
+                </g>
+                <g transform="translate(-30,-70) scale(1,1)">
+                  <g>
+                    <path fill="none" stroke="none" /><text fill="#000000" stroke="none" font-family="Arial"
+                      font-size="13px" font-style="normal" font-weight="normal" text-decoration="none" x="45"
+                      y="175.5">+municipalities: Collection&lt;Municipality&gt;</text></g>
+                </g>
+                <g transform="translate(-30,-70) scale(1,1)">
+                  <rect fill="#C0C0C0" stroke="none" x="399" y="303" width="159.642578125" height="192" opacity="0.2" />
+                </g>
+                <g transform="translate(-30,-70) scale(1,1)">
+                  <rect fill="#ffffff" stroke="none" x="392" y="296" width="159.642578125" height="192" />
+                </g>
+                <g transform="translate(-30,-70) scale(1,1)">
+                  <path fill="none" stroke="#000000"
+                    d="M 392 296 L 551.642578125 296 L 551.642578125 488 L 392 488 L 392 296 Z Z"
+                    stroke-miterlimit="10" />
+                </g>
+                <g transform="translate(-30,-70) scale(1,1)">
+                  <path fill="none" stroke="#000000" d="M 392 321 L 551.642578125 321" stroke-miterlimit="10" />
+                </g>
+                <g transform="translate(-30,-70) scale(1,1)">
+                  <path fill="none" stroke="#000000" d="M 392 479 L 551.642578125 479" stroke-miterlimit="10" />
+                </g>
+                <g transform="translate(-30,-70) scale(1,1)">
+                  <g>
+                    <path fill="none" stroke="none" /><text fill="#000000" stroke="none" font-family="Arial"
+                      font-size="13px" font-style="normal" font-weight="bold" text-decoration="none" x="444.72314453125"
+                      y="315.5">Township</text></g>
+                </g>
+                <g transform="translate(-30,-70) scale(1,1)">
+                  <g>
+                    <path fill="none" stroke="none" /><text fill="#000000" stroke="none" font-family="Arial"
+                      font-size="13px" font-style="normal" font-weight="normal" text-decoration="none" x="397"
+                      y="338.5">+id: string</text></g>
+                </g>
+                <g transform="translate(-30,-70) scale(1,1)">
+                  <g>
+                    <path fill="none" stroke="none" /><text fill="#000000" stroke="none" font-family="Arial"
+                      font-size="13px" font-style="normal" font-weight="normal" text-decoration="none" x="397"
+                      y="353.5">+name: string</text></g>
+                </g>
+                <g transform="translate(-30,-70) scale(1,1)">
+                  <g>
+                    <path fill="none" stroke="none" /><text fill="#000000" stroke="none" font-family="Arial"
+                      font-size="13px" font-style="normal" font-weight="normal" text-decoration="none" x="397"
+                      y="368.5">+class: string</text></g>
+                </g>
+                <g transform="translate(-30,-70) scale(1,1)">
+                  <g>
+                    <path fill="none" stroke="none" /><text fill="#000000" stroke="none" font-family="Arial"
+                      font-size="13px" font-style="normal" font-weight="normal" text-decoration="none" x="397"
+                      y="383.5">+type: string</text></g>
+                </g>
+                <g transform="translate(-30,-70) scale(1,1)">
+                  <g>
+                    <path fill="none" stroke="none" /><text fill="#000000" stroke="none" font-family="Arial"
+                      font-size="13px" font-style="normal" font-weight="normal" text-decoration="none" x="397"
+                      y="398.5">+municipalityId: string</text></g>
+                </g>
+                <g transform="translate(-30,-70) scale(1,1)">
+                  <g>
+                    <path fill="none" stroke="none" /><text fill="#000000" stroke="none" font-family="Arial"
+                      font-size="13px" font-style="normal" font-weight="normal" text-decoration="none" x="397"
+                      y="413.5">+municipality: Municipality</text></g>
+                </g>
+                <g transform="translate(-30,-70) scale(1,1)">
+                  <g>
+                    <path fill="none" stroke="none" /><text fill="#000000" stroke="none" font-family="Arial"
+                      font-size="13px" font-style="normal" font-weight="normal" text-decoration="none" x="397"
+                      y="428.5">+postCodeId: string</text></g>
+                </g>
+                <g transform="translate(-30,-70) scale(1,1)">
+                  <g>
+                    <path fill="none" stroke="none" /><text fill="#000000" stroke="none" font-family="Arial"
+                      font-size="13px" font-style="normal" font-weight="normal" text-decoration="none" x="397"
+                      y="443.5">+postCode: PostCode</text></g>
+                </g>
+                <g transform="translate(-30,-70) scale(1,1)">
+                  <g>
+                    <path fill="none" stroke="none" /><text fill="#000000" stroke="none" font-family="Arial"
+                      font-size="13px" font-style="normal" font-weight="normal" text-decoration="none" x="397"
+                      y="458.5">+cityId: string</text></g>
+                </g>
+                <g transform="translate(-30,-70) scale(1,1)">
+                  <g>
+                    <path fill="none" stroke="none" /><text fill="#000000" stroke="none" font-family="Arial"
+                      font-size="13px" font-style="normal" font-weight="normal" text-decoration="none" x="397"
+                      y="473.5">+city: City</text></g>
+                </g>
+                <g transform="translate(-30,-70) scale(1,1)">
+                  <path fill="none" stroke="#000000" d="M 376 144 L 282 144" stroke-miterlimit="10" />
+                </g>
+                <g transform="translate(-30,-70) scale(1,1)">
+                  <path fill="#000000" stroke="none"
+                    d="M 292.16267485762415 139.790482243984 L 282 144 L 292.16267485762415 148.209517756016 L 304 144" />
+                </g>
+                <g transform="translate(-30,-70) scale(1,1)">
+                  <path fill="none" stroke="#000000"
+                    d="M 292.16267485762415 139.790482243984 L 282 144 L 292.16267485762415 148.209517756016 L 304 144 L 292.16267485762415 139.790482243984"
+                    stroke-miterlimit="10" />
+                </g>
+                <g transform="translate(-30,-70) scale(1,1)">
+                  <path fill="none" stroke="#000000" d="M 392 389 L 272 389" stroke-miterlimit="10" />
+                </g>
+                <g transform="translate(-30,-70) scale(1,1)">
+                  <path fill="#000000" stroke="none"
+                    d="M 282.16267485762415 384.790482243984 L 272 389 L 282.16267485762415 393.209517756016 L 294 389" />
+                </g>
+                <g transform="translate(-30,-70) scale(1,1)">
+                  <path fill="none" stroke="#000000"
+                    d="M 282.16267485762415 384.790482243984 L 272 389 L 282.16267485762415 393.209517756016 L 294 389 L 282.16267485762415 384.790482243984"
+                    stroke-miterlimit="10" />
+                </g>
+                <g transform="translate(-30,-70) scale(1,1)">
+                  <path fill="none" stroke="#000000" d="M 482 296 L 482 212" stroke-miterlimit="10" />
+                </g>
+                <g transform="translate(-30,-70) scale(1,1)">
+                  <path fill="#000000" stroke="none"
+                    d="M 486.209517756016 222.16267485762415 L 482 212 L 477.790482243984 222.16267485762415 L 482 234" />
+                </g>
+                <g transform="translate(-30,-70) scale(1,1)">
+                  <path fill="none" stroke="#000000"
+                    d="M 486.209517756016 222.16267485762415 L 482 212 L 477.790482243984 222.16267485762415 L 482 234 L 486.209517756016 222.16267485762415"
+                    stroke-miterlimit="10" />
+                </g>
+                <g transform="translate(-30,-70) scale(1,1)">
+                  <path fill="none" stroke="#000000" d="M 704 146 L 597 146" stroke-miterlimit="10" />
+                </g>
+                <g transform="translate(-30,-70) scale(1,1)">
+                  <path fill="#FFFFFF" stroke="none"
+                    d="M 607.1626748576241 141.790482243984 L 597 146 L 607.1626748576241 150.209517756016 L 619 146" />
+                </g>
+                <g transform="translate(-30,-70) scale(1,1)">
+                  <path fill="none" stroke="#000000"
+                    d="M 607.1626748576241 141.790482243984 L 597 146 L 607.1626748576241 150.209517756016 L 619 146 L 607.1626748576241 141.790482243984"
+                    stroke-miterlimit="10" />
+                </g>
+                <g transform="translate(-30,-70) scale(1,1)">
+                  <path fill="none" stroke="#000000" d="M 801 336 L 801 205" stroke-miterlimit="10" />
+                </g>
+                <g transform="translate(-30,-70) scale(1,1)">
+                  <path fill="#000000" stroke="none"
+                    d="M 805.209517756016 215.16267485762415 L 801 205 L 796.790482243984 215.16267485762415 L 801 227" />
+                </g>
+                <g transform="translate(-30,-70) scale(1,1)">
+                  <path fill="none" stroke="#000000"
+                    d="M 805.209517756016 215.16267485762415 L 801 205 L 796.790482243984 215.16267485762415 L 801 227 L 805.209517756016 215.16267485762415"
+                    stroke-miterlimit="10" />
+                </g>
+                <g transform="translate(-30,-70) scale(1,1)">
+                  <path fill="none" stroke="#000000" d="M 552 398 L 664 398" stroke-miterlimit="10" />
+                </g>
+                <g transform="translate(-30,-70) scale(1,1)">
+                  <path fill="#000000" stroke="none"
+                    d="M 653.8373251423759 402.209517756016 L 664 398 L 653.8373251423758 393.790482243984 L 642 398" />
+                </g>
+                <g transform="translate(-30,-70) scale(1,1)">
+                  <path fill="none" stroke="#000000"
+                    d="M 653.8373251423759 402.209517756016 L 664 398 L 653.8373251423758 393.790482243984 L 642 398 L 653.8373251423759 402.209517756016"
+                    stroke-miterlimit="10" />
+                </g>
+              </g>
+            </svg>
+          </section>
+        </div>
+      </div>
+      <hr>
+    </div>
+  </main>
+  <footer class="container">
+    <p class="text-right"><a href="#top">Back to top &UpArrow;</a></p>
+    <p>&copy; Bruno Jardón / Elote Studio 2020</p>
+  </footer>
+  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+    integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+    integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+    crossorigin="anonymous"></script>
+</body>
+
+</html>
