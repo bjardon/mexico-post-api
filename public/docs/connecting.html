@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Mexico Post API: Docs</title>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="shortcut icon" type="image/x-icon" href="https://loopback.io/favicon.ico">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <style>
+    /* Move down content because we have a fixed navbar that is 3.5rem tall */
+    body {
+      padding-top: 3.5rem;
+    }
+  </style>
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+    <div class="container">
+      <a class="navbar-brand" href="https://elotestudio.com">EloteStudio</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar" aria-controls="navbar"
+        aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbar">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="/">Home</a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="/docs/index.html">Documentation</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/explorer">API Explorer</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <main id="top" role="main">
+    <div class="jumbotron">
+      <div class="container">
+        <h1>Documentation | <small>Connecting to the API</small></h1>
+        <p class="lead">mexico-post-api</p>
+      </div>
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-3">
+          <h2>Contents</h2>
+          <ul class="list-unstyled">
+            <li class="ml-0"><a href="/docs/#top" clas>Introduction</a></li>
+            <ul class="list-unstyled">
+              <li class="ml-2"><a href="/docs/#whats-this">What's this</a></li>
+              <li class="ml-2"><a href="/docs/#whos-this-for">Who's this for?</a></li>
+              <li class="ml-2"><a href="/docs/#pricing">Pricing</a></li>
+              <li class="ml-2"><a href="/docs/#contribute">I want to contribute</a></li>
+              <li class="ml-2"><a href="/docs/#license">License</a></li>
+              <li class="ml-2"><a href="/docs/#credits">Credits</a></li>
+            </ul>
+            <li class="ml-0"><a href="/docs/entities/introduction.html">Entities</a></li>
+            <ul class="list-unstyled">
+              <li class="ml-2"><a href="/docs/entities/state.html">State</a></li>
+              <li class="ml-2"><a href="/docs/entities/city.html">City</a></li>
+              <li class="ml-2"><a href="/docs/entities/municipality.html">Municipality</a></li>
+              <li class="ml-2"><a href="/docs/entities/township.html">Township</a></li>
+              <li class="ml-2"><a href="/docs/entities/post-code.html">PostCode</a></li>
+              <li class="ml-2"><a href="/docs/entities/post-office.html">PostOffice</a></li>
+              <li class="ml-2"><a href="/docs/entities/class-diagram.html">Class diagram</a></li>
+            </ul>
+            <li class="ml-0"><a href="/docs/connecting.html">Connecting to the API</a></li>
+            <ul class="list-unstyled">
+              <li class="ml-2"><a href="/docs/connecting.html#remote">Connecting to this server</a></li>
+              <ul class="list-unstyled">
+                <li class="ml-4"><a href="/docs/connecting.html#remote-http-client">Using an HTTP client</a></li>
+                <li class="ml-4"><a href="/docs/connecting.html#remote-loopback">Connecting another Loopback app</a>
+                </li>
+                <li class="ml-4"><a href="/docs/connecting.html#remote-openapi">Connecting an OpenAPI-compatible
+                    framework</a></li>
+              </ul>
+              <li class="ml-2"><a href="/docs/connecting.html#self-hosted">Deploying your own server</a></li>
+              <ul class="list-unstyled">
+                <li class="ml-4"><a href="/docs/connecting.html#self-hosted-code">Getting the code</a></li>
+                <li class="ml-4"><a href="/docs/connecting.html#self-hosted-config">Configuring the server</a></li>
+                <li class="ml-4"><a href="/docs/connecting.html#self-hosted-deploy">Deploying the API</a></li>
+              </ul>
+              <li class="ml-2"><a href="/docs/connecting.html#auth">Authentication</a></li>
+            </ul>
+            <li class="ml-0"><a href="/docs/endpoints/introduction.html">Endpoints</a></li>
+            <ul class="list-unstyled">
+              <li class="ml-2"><a href="/docs/endpoints/state.html">State</a></li>
+              <ul class="list-unstyled">
+                <li class="ml-4"><a href="/docs/endpoints/state.html#all">List all states</a></li>
+                <li class="ml-4"><a href="/docs/endpoints/state.html#find">Find a state</a></li>
+                <li class="ml-4"><a href="/docs/endpoints/state.html#municipalities">List state Municipalities</a></li>
+              </ul>
+              <li class="ml-2"><a href="/docs/endpoints/municipality.html">Municipality</a></li>
+              <ul class="list-unstyled">
+                <li class="ml-4"><a href="/docs/endpoints/municipality.html#all">List all Municipalities</a></li>
+                <li class="ml-4"><a href="/docs/endpoints/municipality.html#find">Find a Municipality</a></li>
+                <li class="ml-4"><a href="/docs/endpoints/municipality.html#townships">List all Townships</a></li>
+                <li class="ml-4"><a href="/docs/endpoints/municipality.html#post-offices">List all Post Offices</a></li>
+                <li class="ml-4"><a href="/docs/endpoints/municipality.html#state">Find parent State</a></li>
+              </ul>
+              <li class="ml-2"><a href="/docs/endpoints/township.html">Township</a></li>
+              <ul class="list-unstyled">
+                <li class="ml-4"><a href="/docs/endpoints/township.html#all">List all Townships</a></li>
+                <li class="ml-4"><a href="/docs/endpoints/township.html#find">Find a Township</a></li>
+                <li class="ml-4"><a href="/docs/endpoints/township.html#post-code">Find parent Post Code</a></li>
+                <li class="ml-4"><a href="/docs/endpoints/township.html#municipality">Find parent Municipality</a></li>
+                <li class="ml-4"><a href="/docs/endpoints/township.html#city">Find parent City</a></li>
+              </ul>
+              <li class="ml-2"><a href="/docs/endpoints/city.html">City</a></li>
+              <ul class="list-unstyled">
+                <li class="ml-4"><a href="/docs/endpoints/city.html#all">List all Cities</a></li>
+                <li class="ml-4"><a href="/docs/endpoints/city.html#find">Find a City</a></li>
+                <li class="ml-4"><a href="/docs/endpoints/city.html#townships">List all Townships</a></li>
+              </ul>
+              <li class="ml-2"><a href="/docs/endpoints/post-code.html">PostCode</a></li>
+              <ul class="list-unstyled">
+                <li class="ml-4"><a href="/docs/endpoints/post-code.html#all">List all Post Codes</a></li>
+                <li class="ml-4"><a href="/docs/endpoints/post-code.html#find">Find a Post Code</a></li>
+                <li class="ml-4"><a href="/docs/endpoints/post-code.html#township">List all Townships</a></li>
+                <li class="ml-4"><a href="/docs/endpoints/post-code.html#post-office">Find parent Post Office</a></li>
+              </ul>
+              <li class="ml-2"><a href="/docs/endpoints/post-office.html">Post Office</a></li>
+              <ul class="list-unstyled">
+                <li class="ml-4"><a href="/docs/endpoints/post-office.html#all">List all Post Offices</a></li>
+                <li class="ml-4"><a href="/docs/endpoints/post-office.html#find">Find a Post Office</a></li>
+                <li class="ml-4"><a href="/docs/endpoints/post-office.html#post-codes">List all Post Codes</a></li>
+                <li class="ml-4"><a href="/docs/endpoints/post-office.html#township">Find parent Township</a></li>
+              </ul>
+              <li class="ml-2"><a href="/docs/endpoints/address.html">Address</a></li>
+              <ul class="list-unstyled">
+                <li class="ml-4"><a href="/docs/endpoints/address.html#validate">Validate address</a></li>
+              </ul>
+            </ul>
+          </ul>
+        </div>
+        <div class="col">
+          <section id="introduction">
+            <h2>Introduction</h2>
+            <p>This API is designed using the REST architecture design, that means that every operation can be executed
+              by making an HTTP request to the specified endpoint.</p>
+            <p>There are many ways to connect to the API, depending on the use case; but on the inside the connection
+              relays on an HTTP request.</p>
+          </section>
+          <section id="remote">
+            <h2>Connecting to this server</h2>
+            <p>There is an instance of this project running on this server, which you can connect to, to access the
+              API's resources.</p>
+          </section>
+          <section id="remote-http-client">
+            <h3>Using an HTTP Client</h3>
+            <p>The easiest way to connect to this API instance is using an HTTP client. This can be, either
+              programatically (e.g. using the $.get method on jQuery), using a cli tool (e.g. curl) or a GUI client
+              (e.g. PostMan or Insomnia).</p>
+            <p>Use this path to connect to the API: <code>https://mexico-post.elotestudio.com/</code> and append the
+              resource you want to access. The available endpoints are detailed on the <a
+                href="/docs/endpoints">Endpoints</a> section.</p>
+            <p>Send an HTTP request to the desired resource's path, using the specified method (pretty much every single
+              endpoint is exposed using <code>GET</code>).</p>
+          </section>
+          <section id="remote-loopback">
+            <h3>Connecting another Loopback 4 app</h3>
+            <p>With the introduction of Loopback 4, the framework developers implemented the OpenAPI spec. With this new
+              addition, it is easier to connect external datasources to our projects. Just follow the instructions on
+              how to add a datasource, more specifically the <a
+                href="https://loopback.io/doc/en/lb4/Calling-other-APIs-and-web-services.html#datasource-for-rest-service-with-openapi-specification">Datasource
+                for REST service with OpenAPI specification</a> topic.</p>
+            <p>When prompted for the spec file, enter
+              <code>https://mexico-post.elotestudio.com/explorer/openapi.json</code>.</p>
+            <p>However, when using this approach, you will probably be required to copy some models into your own
+              architecture; consider using the HTTP approach if you're not comfortable with this.</p>
+          </section>
+          <section id="remote-openapi">
+            <h3>Connecting an OpenAPI-compatible framework</h3>
+            <p>Depending on the specifics of your framework, you could need additional information. The OpenAPI spec
+              file is available at <code>https://mexico-post.elotestudio.com/explorer/openapi.json</code>, but you can
+              also use the <a href="https://mexico-post.elotestudio.com/explorer">API Explorer</a> to help you get what
+              you need.</p>
+          </section>
+          <section id="self-hosted">
+            <h2>Deploying your own server</h2>
+            <p>The alternative is downloading a copy of the repository's code, and deploying and running the server on
+              your own infrastructure; if that's what you're looking for.</p>
+            <p>There's really no reason to need to use this approach, other than security policies or maybe if you want
+              to do some modifications to the code (which you're allowed to). The server is protected using the
+              CloudFlare DNS and an SSL certificate, and the resources are perfectly accessible through this version.
+              However, if you prefer so, you absolutely can do it.</p>
+          </section>
+          <section id="self-hosted-code">
+            <h3>Getting the code</h3>
+            <p>Get a copy of the code by downloading a ZIP or cloning the GitHub repository: <a
+                href="https://github.com/bjardon/mexico-post-api">bjardon/mexico-post-api</a>.</p>
+            <p>The code is released under the <code>MIT</code> license, so you're entitled to copy, modify and
+              distribute; so long you give the proper credit to the author.</p>
+          </section>
+          <section id="self-hosted-config">
+            <h3>Configuring the server</h3>
+            <p>Depending on the infrastructure, your config will vary. But you need to have a Node.js runtime installed
+              and configured, and a port must be available for the HTTP server.</p>
+            <p>Make sure to install dependencies with <code>npm</code>.</p>
+          </section>
+          <section id="self-hosted-deploy">
+            <h3>Deploying the API</h3>
+            <p>Once the API code has been downloaded and the Loopback app has been configured, the server can be
+              deployed by starting the Node app.</p>
+          </section>
+          <section id="auth">
+            <h2>Authentication</h2>
+            <p>At the moment, no authentication method is required to access the resources. I don't know if this will
+              change in the future; but in case it does, I'll let you know.</p>
+          </section>
+        </div>
+      </div>
+      <hr>
+    </div>
+  </main>
+  <footer class="container">
+    <p class="text-right"><a href="#top">Back to top &UpArrow;</a></p>
+    <p>&copy; Bruno Jardón / Elote Studio 2020</p>
+  </footer>
+  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+    integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+    integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+    crossorigin="anonymous"></script>
+</body>
+
+</html>
